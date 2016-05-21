@@ -13,4 +13,9 @@ class InfoController extends Controller {
     implicit val infoWrites = Json.writes[Info]
     Ok(Json.toJson(Info()))
   }
+
+  def info2 = Action(parse.json) { implicit request =>
+    implicit val infoReads = Json.reads[Info]
+    Ok("Got request [" + request + "] ->" + request.body.as[Info])
+  }
 }

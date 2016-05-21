@@ -13,3 +13,5 @@ GET     /message                    controllers.AsyncController.message
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
 
 GET     /info                       controllers.InfoController.info
+
+POST    /info2                      controllers.InfoController.info2
