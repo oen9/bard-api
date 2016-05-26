@@ -15,3 +15,5 @@ GET     /assets/*file               controllers.Assets.versioned(path="/public",
 GET     /info                       controllers.InfoController.info
 
 POST    /info2                      controllers.InfoController.info2
+
+GET     /websock                    controllers.InfoController.websock

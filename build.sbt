@@ -11,6 +11,7 @@ libraryDependencies ++= Seq(
   cache,
   ws,
   filters,
+  "com.typesafe.akka" % "akka-cluster-tools_2.11" % "2.4.4",
   "org.scalatestplus.play" %% "scalatestplus-play" % "1.5.1" % Test
 )
 
