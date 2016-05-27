@@ -1,4 +1,4 @@
-package models
+package modules
 
 import actor.ActorInit
 import com.google.inject.AbstractModule
