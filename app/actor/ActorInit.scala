@@ -7,5 +7,4 @@ import akka.actor.{ActorSystem, Props}
 @Singleton
 class ActorInit @Inject()(system: ActorSystem) {
   val publisher = system.actorOf(Props[Publisher], "publisher")
-  val PlaylistActor = system.actorOf(Props[PlaylistActor], "playlist")
 }

@@ -5,10 +5,9 @@ import akka.cluster.pubsub.DistributedPubSub
 import akka.cluster.pubsub.DistributedPubSubMediator.{Subscribe, SubscribeAck}
 import models.{ToPublish, _}
 import play.api.libs.json.Json
+import models.Writes._
 
 class UserActor(out: ActorRef) extends Actor {
-
-  implicit val infoReads = Json.writes[Playlist]
 
   val mediator = DistributedPubSub(context.system).mediator
   mediator ! Subscribe("content", self)
@@ -26,7 +25,6 @@ class UserActor(out: ActorRef) extends Actor {
 
     case msg: Payload if msg.event == "add" =>
       playlist ! AddToPlaylist(msg.content.get)
-      publisher ! ToPublish(msg)
     case msg: Payload if msg.event == "clear" =>
       playlist ! ClearPlaylist
       publisher ! ToPublish(msg)
