@@ -23,6 +23,8 @@ class UserActor(out: ActorRef) extends Actor {
     case msg: Payload if msg.event == "publish" => publisher ! ToPublish(msg)
     case ToPublish(payload) => out ! payload
 
+    case msg: Payload if msg.event == "play" || msg.event == "stop" =>
+      playlist ! msg
     case msg: Payload if msg.event == "add" =>
       playlist ! AddToPlaylist(msg.content.get)
     case msg: Payload if msg.event == "clear" =>

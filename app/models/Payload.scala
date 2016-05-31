@@ -1,3 +1,3 @@
 package models
 
-case class Payload(event: String, content: Option[String])
+case class Payload(event: String, content: Option[String] = None)
