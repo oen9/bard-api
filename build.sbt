@@ -11,10 +11,11 @@ libraryDependencies ++= Seq(
   cache,
   ws,
   filters,
-  "com.typesafe.akka" % "akka-cluster-tools_2.11" % "2.4.4",
+  "com.typesafe.akka" %% "akka-cluster-tools" % "2.4.4",
+  "com.typesafe.akka" %% "akka-http-experimental" % "2.4.4",
   "org.psnively" % "spring_scala_4-2-0_2.11" % "1.0.0",
-  "org.springframework" % "spring-web" % "4.2.4.RELEASE",
   "com.fasterxml.jackson.module" % "jackson-module-scala_2.11" % "2.7.2",
+  "org.reactivemongo" %% "play2-reactivemongo" % "0.12.0",
   "org.scalatestplus.play" %% "scalatestplus-play" % "1.5.1" % Test
 )
 
